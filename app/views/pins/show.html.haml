@@ -1,10 +1,18 @@
-.container
-  .row
-    .col-md-6
-      .well
-        %h1.page-header= @pin.title
-        %p.lead= @pin.description
-        .btn.btn-default= link_to "Back", root_path
-        .btn.btn-default= link_to "Edit", edit_pin_path
-       
-        = link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+.row
+	.container
+		%h1.page-header= @pin.title
+		%p.lead= @pin.description
+		.h5 Submitted by-
+		%p= @pin.user.email
+		.btn.btn-default= link_to "Back", root_path
+		.btn.btn-default= link_to "Edit", edit_pin_path
+		= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you 			sure?" }, class: "btn btn-default"
+	
+		
+
+
+			
+ 
+  	  			
+	  	
+				
