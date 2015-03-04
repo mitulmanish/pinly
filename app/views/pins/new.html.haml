@@ -1,8 +1,7 @@
-.row
-  
-  .container
-    .col-md-4
-    
-
-      = render 'form'
-      = link_to "Back", pins_path 
+.col-md-8.col-md-offset-2
+	.row
+		.panel.panel-default
+			.panel-heading
+				%h1.text-muted Create A New Pin
+			.panel-body
+				= render 'form' 

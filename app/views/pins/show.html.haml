@@ -1,5 +1,6 @@
 .row
 	.container
+		= image_tag @pin.image.url(:medium)
 		%h1.page-header= @pin.title
 		%p.lead= @pin.description
 		.h5 Submitted by-

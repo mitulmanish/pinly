@@ -9,7 +9,7 @@ class PinsController < ApplicationController
 	def show
 	end
 
-	def new
+    def new
 		@pin = current_user.pins.build
 	end
 
@@ -44,7 +44,7 @@ class PinsController < ApplicationController
 	private
 
     def pin_params
-		params.require(:pin).permit(:title, :description)
+		params.require(:pin).permit(:title, :description, :image)
 	end
 
 	def find_pin
