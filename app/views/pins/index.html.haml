@@ -1,18 +1,23 @@
 -if user_signed_in?
-	%p.text-center=link_to "New Pin", new_pin_path
-	.container
-		.row
-			- @pins.each do |pin|
+	.row.top-mar
+		.col-sm-4.col-sm-offset-5
+			.btn.btn-default.new_pin=link_to "New Pin", new_pin_path
+	
+	#pins.masonry-container.transitions-enabled.masonry.masonry-brick
+		- @pins.each do |pin|
+			.box.panel.panel-default
 				= link_to (image_tag pin.image.url(:medium)), pin
-				%h5.text-left= link_to pin.title, pin
+				.panel-body
+					%h2.text-center= link_to pin.title, pin
 -else
-	.h5.btn.btn-default=link_to "New Pin", new_pin_path 
-	.container
-		.row
-			- @pins.each do |pin|
+	
+	#pins.transitions-enabled
+		- @pins.each do |pin|
+			.box.panel.panel-default
 				= link_to (image_tag pin.image.url(:medium)), pin
-				%h5.text-left= link_to pin.title, pin
-
+				.panel-body
+					%h2.text-center= link_to pin.title, pin
+	
 
 				
 				

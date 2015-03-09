@@ -1,13 +1,24 @@
-.row
-	.container
-		= image_tag @pin.image.url(:medium)
-		%h1.page-header= @pin.title
-		%p.lead= @pin.description
-		.h5 Submitted by-
-		%p= @pin.user.email
-		.btn.btn-default= link_to "Back", root_path
-		.btn.btn-default= link_to "Edit", edit_pin_path
-		= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you 			sure?" }, class: "btn btn-default"
+#pin_show.row.top-mar
+	.col-md-8.col-md-offset-2
+		.panel.panel-default
+			.panel-heading.pin_image
+				= image_tag @pin.image.url
+			.panel-body
+				%h1.text-muted.text-center= @pin.title
+				%p.description.text-muted.text-center= @pin.description
+			.panel-footer
+				.row
+					.col-md-6
+						%p.user
+							Submitted by
+							= @pin.user.email
+					.col-md-6
+						
+						- if user_signed_in?
+							= link_to "Edit", edit_pin_path, class: "btn btn-default"
+							= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+			
+			
 	
 		
 
